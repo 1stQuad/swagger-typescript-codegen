@@ -10,7 +10,7 @@ This fork was made to simplify some parts, add some more features, and tailor it
 
 ## Installation
 ```bash
-npm install swagger-typescript-codegen
+npm install @1stquad/swagger-typescript-codegen 
 ```
 
 ## Example
