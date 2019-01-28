@@ -1,6 +1,5 @@
 import { readFileSync } from "fs";
 import * as Mustache from "mustache";
-import {} from "mustache";
 import { assign, identity } from "lodash";
 import { TemplateLocations } from "../options/options";
 import { join } from "path";

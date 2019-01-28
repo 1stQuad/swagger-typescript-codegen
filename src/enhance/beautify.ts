@@ -1,14 +1,14 @@
 import { js_beautify } from "js-beautify";
 import { defaults } from "lodash";
 
-const DEFAULT_BEAUTIFY_OPTIONS: JsBeautifyOptions = {
+const DEFAULT_BEAUTIFY_OPTIONS = {
   indent_size: 4,
   max_preserve_newlines: 2
 };
 
 export type Beautify = ((source: string) => string) | boolean | undefined;
 
-export type BeautifyOptions = JsBeautifyOptions;
+export type BeautifyOptions = {};
 
 export function beautifyCode(
   beautify: Beautify,
