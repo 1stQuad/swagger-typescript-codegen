@@ -14,6 +14,7 @@ import {
 } from "./type-mappers/dictionary";
 import { makeAnyTypeSpec } from "./type-mappers/any";
 import { isSchema } from "./type-mappers/schema";
+import { isDate, makeDateTypeSpec } from "./type-mappers/date";
 
 /**
  * Recursively converts a swagger type description into a typescript type, i.e., a model for our mustache
@@ -37,6 +38,8 @@ export function convertType(
     return makeEnumTypeSpec(swaggerType);
   } else if (isString(swaggerType)) {
     return makeStringTypeSpec(swaggerType);
+  } else if (isDate(swaggerType)) {
+    return makeDateTypeSpec(swaggerType);
   } else if (isNumber(swaggerType)) {
     return makeNumberTypeSpec(swaggerType);
   } else if (isBoolean(swaggerType)) {

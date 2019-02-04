@@ -17,5 +17,7 @@ export function makeStringTypeSpec(swaggerType: SwaggerString): StringTypeSpec {
 export function isString(
   swaggerType: SwaggerType
 ): swaggerType is SwaggerString {
-  return swaggerType.type === "string";
+  if (swaggerType.format)
+    return swaggerType.type === "string" && swaggerType.format !== "date-time";
+  else return swaggerType.type === "string";
 }

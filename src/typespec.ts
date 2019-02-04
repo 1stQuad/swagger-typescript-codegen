@@ -1,6 +1,6 @@
 import { SwaggerType } from "./swagger/Swagger";
 
-type TsType = "string" | "number" | "boolean" | "ref";
+type TsType = "string" | "number" | "boolean" | "ref" | "Date";
 
 export interface TypeSpec {
   readonly name: string | undefined;

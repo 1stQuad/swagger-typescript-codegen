@@ -2,6 +2,7 @@
 type SwaggerTypes =
   | "object"
   | "string"
+  | "Date"
   | "boolean"
   | "number"
   | "integer"
@@ -17,6 +18,7 @@ export interface SwaggerType {
   readonly allOf?: ReadonlyArray<SwaggerType>;
   readonly minItems: number;
   readonly title?: string;
+  readonly format?: string;
   readonly $ref?: string;
   readonly properties: {
     readonly [index: string]: SwaggerType;
@@ -38,6 +40,10 @@ export interface SwaggerBoolean extends SwaggerType {
 
 export interface SwaggerString extends SwaggerType {
   readonly type: "string";
+}
+
+export interface SwaggerDate extends SwaggerType {
+  readonly type: "Date";
 }
 
 export interface SwaggerNumber extends SwaggerType {
