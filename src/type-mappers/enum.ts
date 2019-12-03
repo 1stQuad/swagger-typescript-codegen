@@ -11,7 +11,10 @@ export interface EnumTypeSpec extends TypeSpec {
 export function makeEnumTypeSpec(swaggerType: SwaggerEnum): EnumTypeSpec {
   return {
     ...makeTypeSpecFromSwaggerType(swaggerType),
-    tsType: swaggerType.enum.map(str => JSON.stringify(str)).join(" | "),
+    tsType: swaggerType.enum
+      .map(str => JSON.stringify(str))
+      .sort()
+      .join(" | "),
     enum: swaggerType.enum,
     isEnum: true,
     isAtomic: true
